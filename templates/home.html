@@ -4,10 +4,10 @@
 
   <main class="px-3">
     <h1>SumToDo App</h1>
-    <p class="lead">Dear {{ user.username }}<br> Welcome to SumToDo app. you'll never forget to do anything again. I promise 😜 </p>
+    <p class="lead">Dear {{ user.username }}<br> Welcome to Suc TooList App. you'll never forget to do anything again. I promise 😜 </p>
     <div class="mt-5">
       {% if user.is_authenticated %}
-      <div class="container-fluid">
+      <div class="container-fluid col-lg-6">
         <form method="POST">
           {% csrf_token %}
           <div class="form-floating mb-3">
