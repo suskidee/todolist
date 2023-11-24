@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}ToDoList{% endblock %}
+{% block content %}
+
+  <main class="px-3">
+    <h1>SumToDo App</h1>
+    <p class="lead">Dear {{ user.username }}<br> Welcome to SumToDo app. you'll never forget to do anything again. I promise 😜 </p>
+    <div class="mt-5">
+      {% if user.is_authenticated %}
+      <div class="container-fluid">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <div class="form-floating mb-3 mb-md-0">
+                <input class="form-control bg-dark text-white" id="inputUsername" type="text" name="add" placeholder="Add to todo list" required/>
+                <label for="addToTodoList">Add to todo list</label>
+                <div class="invalid-feedback">cannot be blank</div>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary w-100 py-2" type="submit">add</button>
+        </form>
+      </div>
+      <a href="{% url 'view' %}"><button type="button" class="btn btn-outline-warning btn-lg mx-2 my-3"> View Todo List </button></a>
+      {% else %}
+      <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-info btn-lg mx-2">Login</button></a>
+      <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-warning btn-lg mx-2">Login</button></a>
+
+      {% endif %}
+    </div>
+  </main>
+{% endblock %}
