@@ -7,7 +7,7 @@
 <ul class="list-group  text-white col-lg-8 col-sm-10">
   <li class=" bg-dark text-white list-group-item d-flex justify-content-between align-items-start col-sm-10">
     <div class="ms-2 me-auto">
-      <div class="fw-bold"><a href="{% url 'edit' pk=todos.id %}">Edit</a> ------------- <a href="{% url 'delete' pk=todos.id %}"> ❌ </a></div>
+      <div class="fw-bold"><a href="{% url 'edit' pk=todos.id %}">Edit</a> ----------------<a href="{% url 'delete' pk=todos.id %}"><p>completed ✅</p></a></div>
       <p class="pt-2">{{todos.todo}}</p>
     </div>
   </li>
